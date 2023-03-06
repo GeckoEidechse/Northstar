@@ -132,9 +132,9 @@ jobs:
           path: northstar
       - name: Create zip to upload
         run: |
-          cd northstar/Northstar.release.${{ env.NORTHSTAR_VERSION }}
+          cd northstar/
           zip --recurse-paths --quiet Northstar.release.${{ env.NORTHSTAR_VERSION }}.zip .
-          mv Northstar.release.${{ env.NORTHSTAR_VERSION }}.zip ../../
+          mv Northstar.release.${{ env.NORTHSTAR_VERSION }}.zip ../
       - name: Upload zip to release draft
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/') && !contains(github.ref, '-rc')
