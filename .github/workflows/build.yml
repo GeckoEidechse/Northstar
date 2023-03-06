@@ -10,6 +10,9 @@ on:
         required: true
         default: 'build-thunderstore-package'
 
+permissions:
+  contents: write # Needed to write to GitHub draft release
+
 env:
   NORTHSTAR_VERSION: ${{ github.ref_name }}
 
